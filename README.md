@@ -1,7 +1,6 @@
 <h1>Full Stack Application using Docker:
 <br>
 Spring Boot + React client + MySQL Database</h1>
-<hr>
 <p>Coupons System is a full stack application that allows company users, as part of the campaigns they run, 
     publish the coupons with products on sale/discount and customer users to purchase.<br>
     The system includes both backend and frontend. Backend is on Java + Spring Boot + JPA to communicate with MySQL database.
@@ -13,14 +12,12 @@ Spring Boot + React client + MySQL Database</h1>
     MySQL database runs on second docker image.</p>
 
 <h2>Installation</h2>
-<hr>
 <ol><li>Clone/Copy repository.</li>
     <li>In the root directory of the project run: <code>docker-compose up</code></li>
     <li>When all services will up and running, open the browser and follow to: <code>http://localhost:8080/</code></li>
 </ol>
 
 <h2>How to Use the Application</h2>
-<hr>
 <b><u>Admin User</u></b>
 <ul>
     <li>Credentials to log in and use the app:
