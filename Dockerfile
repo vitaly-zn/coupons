@@ -1,21 +1,10 @@
-FROM openjdk:11
+FROM openjdk:11 AS builder
 WORKDIR /app
+COPY . ./
+RUN ./mvnw clean package -DskipTests
 
-# Copy maven executable to the image
-COPY mvnw .
-COPY .mvn .mvn
-
-# Copy the pom.xml file
-COPY pom.xml .
-
-# Copy the project source
-COPY ./src ./src
-COPY ./pom.xml ./pom.xml
-
-RUN chmod 755 /app/mvnw
-
-RUN ./mvnw dependency:go-offline -B
-
-RUN ./mvnw package -DskipTests
-RUN ls -al
-ENTRYPOINT ["java","-jar","target/coupon-system-0.0.1-SNAPSHOT.jar"]
+FROM openjdk:11-jre
+WORKDIR /usr/app
+COPY --from=builder /app/target/coupon-system-0.0.1-SNAPSHOT.jar ./
+EXPOSE 8080
+CMD ["java", "-jar", "./coupon-system-0.0.1-SNAPSHOT.jar"]
