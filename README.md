@@ -13,8 +13,10 @@ Spring Boot + React client + MySQL Database</h1>
 
 <h2>Installation</h2>
 <ol><li>Clone/Copy repository.</li>
-    <li>In the root directory of the project run: <code>docker-compose up</code></li>
+    <li>In the root directory of the project run command: <code>docker-compose up</code></li>
     <li>When all services will up and running, open the browser and follow to: <code>http://localhost:8080/</code></li>
+    <li>Stop application container - <code>(Ctrl + c)</code></li>
+    <li>Remove container and network - <code>docker-compose down</code></li>
 </ol>
 
 <h2>How to Use the Application</h2>
