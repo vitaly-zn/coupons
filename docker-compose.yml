@@ -1,4 +1,4 @@
-version: "3.9"
+version: "3.0"
 
 services:
   # service 1: defining mysql database
@@ -13,8 +13,8 @@ services:
     restart: always
 
   # service 2: defining spring boot application
-  prosuctsservice:
-    image: coupon-system-spring-react
+  productsservice:
+    image: vitalyzl/coupon-system-spring-react
     container_name: coupon-system-spring-react-app
     build:
       context: .
